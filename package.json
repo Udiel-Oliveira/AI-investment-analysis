@@ -1,0 +1,59 @@
+{
+  "name": "sistema-analise-investimentos",
+  "version": "1.0.0",
+  "description": "Sistema desktop de análise de investimentos com IA supervisionada",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": [
+    "investimentos",
+    "ia",
+    "analise",
+    "financeiro"
+  ],
+  "author": "Mateus Lima, Matheus Araújo, Udiel, Kauã Fernandes",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0"
+  },
+  "build": {
+    "appId": "com.qts.investimentos",
+    "productName": "Análise de Investimentos",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/*.md",
+      "!dist",
+      "!node_modules"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icon.png"
+    }
+  }
+}
